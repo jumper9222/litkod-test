@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.galaxy {
+    display: flex;
+    background-color: hsl(232, 96%, 9%);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.earth {
+    display: flex;
+    position: relative;
+    justify-content: start;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    transform: rotate(23.5deg);
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.earth-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: spin infinite linear 20s;
+    background: url('earth-texture.svg');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    width: 200%;
+    height: 100%;
+    z-index: 0;
+}
+
+.cloud-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('cloud-texture.svg');
+    animation: spin infinite linear 30s;
+    background-size: auto 100%;
+    width: 200%;
+    height: 100%;
+    z-index: 11;
+}
+
+@keyframes spin {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.glow {
+    position: absolute;
+    background-color: hsl(205, 73%, 49%, 0.125);
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    z-index: 0;
+    animation: infinite 5s pulse alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.95);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.two {
+    /* width: 300px;
+    height: 300px; */
+    scale: 0.87;
+}
+
+.three {
+    /* width: 250px;
+    height: 250px; */
+    scale: 0.7;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
