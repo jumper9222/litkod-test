@@ -8,7 +8,7 @@ function createStars(count) {
         star.classList.add("star"); //adds star class to new star element
 
         // Random size
-        const size = Math.random() * 4 + 3; // Between 1px and 4px
+        const size = Math.random() * 4 + 3; // Between 3px and 7px
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
 
@@ -24,9 +24,9 @@ function createStars(count) {
     }
 }
 
-createStars(100); // Generate 200 stars
+createStars(100); // Generate 100 stars
 
-// Optional: Recreate stars on window resize
+// Event listener to recreate stars when viewport is resized. 
 window.addEventListener("resize", () => {
     document.querySelectorAll(".star").forEach(star => star.remove());
     createStars(200);

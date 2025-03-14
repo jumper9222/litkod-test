@@ -1,8 +1,10 @@
 :root {
+    /* CSS Prop to easily modify components */
     --globe-size: 200px;
 }
 
 * {
+    /* Remove padding from root */
     margin: 0;
     padding: 0;
 }
@@ -10,7 +12,9 @@
 .galaxy {
     display: flex;
     background-color: hsl(232, 96%, 9%);
+    /* Center child components horizontally */
     justify-content: center;
+    /* Center child components vertically */
     align-items: center;
     width: 100%;
     height: 100vh;
@@ -18,8 +22,11 @@
 
 .earth-container {
     display: flex;
+    /* To allow child elements to stack */
     position: relative;
+    /* Center child components horizontally */
     justify-content: center;
+    /* Center child components vertically */
     align-items: center;
     overflow: hidden;
     border-radius: 50%;
@@ -28,35 +35,42 @@
 }
 
 .earth {
+    /* To allow child elements to stack */
     position: relative;
     width: 100%;
     height: 100%;
+    /* To mimic Earth's rotational axis */
     transform: rotate(23.5deg);
     z-index: 10;
 }
 
 .earth-map {
+    /* Breaks inline flow */
     position: absolute;
     animation: spin infinite linear 20s;
     background: url('earth-texture.svg');
     background-size: auto 100%;
     background-repeat: repeat-x;
+    /* Larger width for animation to work properly */
     width: 200%;
     height: 100%;
     z-index: 0;
 }
 
 .cloud-map {
+    /* Breaks inline flow */
     position: absolute;
     background: url('cloud-texture.svg');
     animation: spin infinite linear 30s;
     background-size: auto 100%;
+    /* Larger width for animation to work properly */
     width: 200%;
     height: 100%;
     z-index: 11;
 }
 
 .earth-shadow {
+    /* Breaks inline flow */
     position: absolute;
     width: calc(var(--globe-size)/2);
     height: var(--globe-size);
@@ -76,6 +90,7 @@
 }
 
 .glow {
+    /* Breaks inline flow */
     position: absolute;
     background-color: hsl(205, 73%, 49%, 0.125);
     width: 350px;
@@ -95,15 +110,18 @@
     }
 }
 
-.two {
+/* Scales elements with 'glow' and 'two' classes */
+.glow.two {
     scale: 0.87;
 }
 
-.three {
+/* Scales elements with 'glow' and 'three' classes */
+.glow.three {
     scale: 0.7;
 }
 
 .stars {
+    /* Breaks inline flow */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -111,6 +129,7 @@
 }
 
 .star {
+    /* Breaks inline flow */
     position: absolute;
     background: hsl(205, 73%, 49%);
     border-radius: 50%;
